@@ -12,8 +12,14 @@
 */
 
 
-
+//homepage
 Route::get('/', function () {
     return view('home.index');
+});
+
+//products-detail page
+
+Route::get('/products', function () {
+    return view('products.index');
 });
 

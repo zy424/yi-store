@@ -11,7 +11,7 @@
                         <li class="has-dropdown">
                             <a href="shop.html">Shop</a>
                             <ul class="dropdown">
-                                <li><a href="product-detail.html">Product Detail</a></li>
+                                <li><a href="products">Product Detail</a></li>
                                 <li><a href="cart.html">Shipping Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="order-complete.html">Order Complete</a></li>
