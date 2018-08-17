@@ -18,8 +18,11 @@ Route::get('/', function () {
 });
 
 //products-detail page
-
 Route::get('/products', function () {
     return view('products.index');
 });
 
+// about page
+Route::get('/about', function () {
+    return view('about.index');
+});

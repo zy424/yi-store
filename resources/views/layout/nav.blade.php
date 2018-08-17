@@ -18,9 +18,9 @@
                                 <li><a href="add-to-wishlist.html">Wishlist</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Newsletter</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact</a></li>
                         <li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
                     </ul>
                 </div>
