@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('content')
+@section("content")
 <aside id="colorlib-hero" class="breadcrumbs">
     <div class="flexslider">
         <ul class="slides">

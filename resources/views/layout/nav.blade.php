@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="home">Home</a></li>
                         <li class="has-dropdown">
                             <a href="shop.html">Shop</a>
                             <ul class="dropdown">

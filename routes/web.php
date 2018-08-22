@@ -16,13 +16,40 @@
 Route::get('/', function () {
     return view('home.index');
 });
+Route::get('/home', function () {
+    return view('home.index');
+});
 
 //products-detail page
-Route::get('/products', function () {
-    return view('products.index');
+Route::get('/products/detail', function () {
+    return view('products.show');
 });
+
+
 
 // about page
 Route::get('/about', function () {
     return view('about.index');
 });
+
+// contact page
+Route::get('/contact', function () {
+    return view('contact.index');
+});
+
+
+//Admin
+Route::get('/admin/login','\App\Admin\Controllers\LoginController@index');
+
+//login action
+Route::post('/admin/login','\App\Admin\Controllers\LoginController@login');
+
+Route::get('/admin/logout','\App\Admin\Controllers\LoginController@logout');
+
+
+
+//first page
+Route::get('/admin/home','\App\Admin\Controllers\HomeController@index');
+
+
+
