@@ -3,14 +3,14 @@
 <aside id="colorlib-hero" class="breadcrumbs">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image: url(images/cover-img-1.jpg);">
+            <li style="background-image: url(/images/cover-img-1.jpg);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
                                 <h1>Product Detail</h1>
-                                <h2 class="bread"><span><a href="home">Home</a></span> <span><a href="products">Product</a></span> <span>Product Detail</span></h2>
+                                <h2 class="bread"><span><a href="/home">Home</a></span> <span><a href="/products">Product</a></span> <span>Product Detail</span></h2>
                             </div>
                         </div>
                     </div>
@@ -28,13 +28,13 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="product-entry">
-                                <div class="product-img" style="background-image: url(images/item-7.jpg);">
+                                <div class="product-img" style="background-image: url(/images/item-7.jpg);">
                                     <p class="tag"><span class="sale">Sale</span></p>
                                 </div>
                                 <div class="thumb-nail">
-                                    <a href="#" class="thumb-img" style="background-image: url(images/item-11.jpg);"></a>
-                                    <a href="#" class="thumb-img" style="background-image: url(images/item-12.jpg);"></a>
-                                    <a href="#" class="thumb-img" style="background-image: url(images/item-16.jpg);"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-11.jpg);"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-12.jpg);"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-16.jpg);"></a>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="review">
-                                            <div class="user-img" style="background-image: url(images/person2.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(/images/person2.jpg)"></div>
                                             <div class="desc">
                                                 <h4>
                                                     <span class="text-left">Jacob Webb</span>
@@ -169,7 +169,7 @@
                                             </div>
                                         </div>
                                         <div class="review">
-                                            <div class="user-img" style="background-image: url(images/person3.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(/images/person3.jpg)"></div>
                                             <div class="desc">
                                                 <h4>
                                                     <span class="text-left">Jacob Webb</span>
@@ -270,7 +270,7 @@
         <div class="row">
             <div class="col-md-3 text-center">
                 <div class="product-entry">
-                    <div class="product-img" style="background-image: url(images/item-5.jpg);">
+                    <div class="product-img" style="background-image: url(/images/item-5.jpg);">
                         <p class="tag"><span class="new">New</span></p>
                         <div class="cart">
                             <p>
@@ -289,7 +289,7 @@
             </div>
             <div class="col-md-3 text-center">
                 <div class="product-entry">
-                    <div class="product-img" style="background-image: url(images/item-6.jpg);">
+                    <div class="product-img" style="background-image: url(/images/item-6.jpg);">
                         <p class="tag"><span class="new">New</span></p>
                         <div class="cart">
                             <p>
@@ -308,7 +308,7 @@
             </div>
             <div class="col-md-3 text-center">
                 <div class="product-entry">
-                    <div class="product-img" style="background-image: url(images/item-7.jpg);">
+                    <div class="product-img" style="background-image: url(/images/item-7.jpg);">
                         <p class="tag"><span class="new">New</span></p>
                         <div class="cart">
                             <p>
@@ -327,7 +327,7 @@
             </div>
             <div class="col-md-3 text-center">
                 <div class="product-entry">
-                    <div class="product-img" style="background-image: url(images/item-8.jpg);">
+                    <div class="product-img" style="background-image: url(/images/item-8.jpg);">
                         <p class="tag"><span class="new">New</span></p>
                         <div class="cart">
                             <p>
