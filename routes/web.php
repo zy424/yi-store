@@ -29,6 +29,12 @@ Route::get('/products-detail', function () {
     return view('products.show');
 });
 
+//shipping cart
+Route::get('/cart', function () {
+    return view('cart.index');
+});
+
+
 
 
 // about page

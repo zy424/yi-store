@@ -12,7 +12,7 @@
                             <a href="products">Shop</a>
                             <ul class="dropdown">
                                 <li><a href="products-detail">Product Detail</a></li>
-                                <li><a href="cart.html">Shipping Cart</a></li>
+                                <li><a href="cart">Shipping Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="order-complete.html">Order Complete</a></li>
                                 <li><a href="add-to-wishlist.html">Wishlist</a></li>
