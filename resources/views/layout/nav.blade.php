@@ -9,9 +9,9 @@
                     <ul>
                         <li class="active"><a href="home">Home</a></li>
                         <li class="has-dropdown">
-                            <a href="shop.html">Shop</a>
+                            <a href="products">Shop</a>
                             <ul class="dropdown">
-                                <li><a href="products">Product Detail</a></li>
+                                <li><a href="products-detail">Product Detail</a></li>
                                 <li><a href="cart.html">Shipping Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="order-complete.html">Order Complete</a></li>

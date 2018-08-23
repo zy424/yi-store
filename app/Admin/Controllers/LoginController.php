@@ -20,6 +20,9 @@ class LoginController extends Controller
 
         //logic
         $user = request(['name', 'password']);
+        if(\Auth::attempt($user)) {
+            return redirect('/admin/home');
+        }
 
 
         //render
@@ -28,7 +31,9 @@ class LoginController extends Controller
     }
 
     public function logout() {
-
+        \Auth::logout();
         return redirect('/admin/login');
     }
+
+
 }

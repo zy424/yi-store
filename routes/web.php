@@ -20,8 +20,12 @@ Route::get('/home', function () {
     return view('home.index');
 });
 
+//products page
+Route::get('/products', function () {
+    return view('products.index');
+});
 //products-detail page
-Route::get('/products/detail', function () {
+Route::get('/products-detail', function () {
     return view('products.show');
 });
 
