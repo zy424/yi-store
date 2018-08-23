@@ -34,6 +34,12 @@ Route::get('/cart', function () {
     return view('cart.index');
 });
 
+//shipping cart
+Route::get('/checkout', function () {
+    return view('checkout.index');
+});
+
+
 
 
 
