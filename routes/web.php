@@ -34,9 +34,19 @@ Route::get('/cart', function () {
     return view('cart.index');
 });
 
-//shipping cart
+//checkout
 Route::get('/checkout', function () {
     return view('checkout.index');
+});
+
+//order-complete
+Route::get('/order-complete', function () {
+    return view('order-complete.index');
+});
+
+//add-to-wishlist
+Route::get('/wishlist', function () {
+    return view('wishlist.index');
 });
 
 
