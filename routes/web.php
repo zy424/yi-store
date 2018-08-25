@@ -21,9 +21,9 @@ Route::get('/home', function () {
 });
 
 //products page
-Route::get('/products', function () {
-    return view('products.index');
-});
+Route::get('/products', 'ProductController@index');
+
+
 //products-detail page
 Route::get('/products/detail', function () {
     return view('products.show');
@@ -65,7 +65,8 @@ Route::get('/contact', function () {
 
 
 //Admin
-Route::get('/admin/login','\App\Admin\Controllers\LoginController@index');
+// TODO combine them into one route
+Route::get('/admin/login','\App\Admin\Controllers\LoginController@index')->name('login');
 
 //login action
 Route::post('/admin/login','\App\Admin\Controllers\LoginController@login');
@@ -73,9 +74,18 @@ Route::post('/admin/login','\App\Admin\Controllers\LoginController@login');
 Route::get('/admin/logout','\App\Admin\Controllers\LoginController@logout');
 
 
-
-//first page
+//home page
 Route::get('/admin/home','\App\Admin\Controllers\HomeController@index');
+
+//products management
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('/admin/products','\App\Admin\Controllers\ProductController',['only'=>['index','create', 'store' ]]);
+    Route::get('/admin/products/{product}/destroy','\App\Admin\Controllers\ProductController@destroy');
+    Route::get('/admin/products/{product}/edit', '\App\Admin\Controllers\ProductController@edit');
+    Route::put('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
+
+});
+
 
 
 

@@ -7,16 +7,12 @@ use \App\Product;
 
 class ProductController extends Controller
 {
-//    // products list
-//    public function index() {
-//        $posts = Post::orderby('created_at','desc')->withCount(['comments','likes'])->paginate(6);
-//        return view("post/index", compact('posts'));
-//    }
-//
-//    // product detail page
-//    public function show(Post $post) {
-//        $post->load('comments');
-//        return view("post/show", compact('post'));
-//
-//    }
+    // products list
+    public function index() {
+        $products = Product::orderby('created_at','desc')->paginate(6);
+        return view("products/index", compact('products'));
+    }
+
+
+
 }
