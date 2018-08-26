@@ -35,7 +35,7 @@ class ProductController extends Controller {
     }
 
     // edit page
-    public function edit(Post $post) {
+    public function edit(Product $product) {
         return view("admin/product/edit", compact('product'));
 
     }
@@ -61,7 +61,7 @@ class ProductController extends Controller {
         $product->save();
 
         //render
-        return redirect("admin/products/{$product->id}");
+        return redirect("admin/products/{$product->id}/edit");
 
     }
 

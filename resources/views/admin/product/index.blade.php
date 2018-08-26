@@ -37,7 +37,7 @@
                                     <td>{{$product->created_at}}</td>
                                     <td>{{$product->updated_at}}</td>
                                     <td>
-                                        <a type="button" href="#" class="btn btn-sm btn-default " post-id="{{$product->id}}"  ><i class="fa fa-pencil"></i></a>
+                                        <a type="button" href="/admin/products/{{$product->id}}/edit" class="btn btn-sm btn-default " post-id="{{$product->id}}"  ><i class="fa fa-pencil"></i></a>
                                         <a type="button"  href="/admin/products/{{$product->id}}/destroy" class="btn btn-sm btn-default " post-id="{{$product->id}}"  ><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>

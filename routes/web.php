@@ -79,10 +79,10 @@ Route::get('/admin/home','\App\Admin\Controllers\HomeController@index');
 
 //products management
 Route::group(['middleware' => 'auth'], function(){
-    Route::resource('/admin/products','\App\Admin\Controllers\ProductController',['only'=>['index','create', 'store' ]]);
+    Route::resource('/admin/products','\App\Admin\Controllers\ProductController',['only'=>['index','create', 'store']]);
     Route::get('/admin/products/{product}/destroy','\App\Admin\Controllers\ProductController@destroy');
     Route::get('/admin/products/{product}/edit', '\App\Admin\Controllers\ProductController@edit');
-    Route::put('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
+    Route::post('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
 
 });
 
