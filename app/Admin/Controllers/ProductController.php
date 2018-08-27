@@ -1,6 +1,7 @@
 <?php
 namespace  App\Admin\Controllers;
 
+use App\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \App\Product;
@@ -20,6 +21,8 @@ class ProductController extends Controller {
 
     public function store(Request $request)
     {
+        var_dump($request->file('product_image'));
+        exit;
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -41,7 +44,7 @@ class ProductController extends Controller {
     }
 
     // edit logic
-    public function update(Product $product) {
+    public function update(Request $request, Product $product) {
         //validate
         $this->validate(request(),[
             'name' => 'required|string',
@@ -51,7 +54,6 @@ class ProductController extends Controller {
             'discount'=>'required|integer',
         ]);
 
-
         //logic
         $product->name = request('name');
         $product->description = request('description');
@@ -59,6 +61,12 @@ class ProductController extends Controller {
         $product->price = request('price');
         $product->discount = request('discount');
         $product->save();
+
+        //upload image
+        $path = $request->file('product_image')->storePublicly(md5(time()));
+
+        ProductImage::create(['product_id'=>$product->id, 'image_path'=>$path]);
+
 
         //render
         return redirect("admin/products/{$product->id}/edit");

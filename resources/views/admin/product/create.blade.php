@@ -45,15 +45,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
+                            <label for="product_image">File input</label>
+                            <input type="file" name="product_image" id="product_image">
 
                             <p class="help-block">Example block-level help text here.</p>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
                         </div>
                     </div>
                     <!-- /.box-body -->

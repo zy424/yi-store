@@ -12,7 +12,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" method="POST" action="/admin/products/{{$product->id}}">
+                    <form role="form" method="POST" action="/admin/products/{{$product->id}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="box-body">
                             <div class="form-group">
@@ -46,14 +46,9 @@
 
                             <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
+                                <input type="file" name="product_image" id="product_image">
 
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Check me out
-                                </label>
+                                <div><img src="{{asset('/storage/'.$product->images[0]->image_path)}}"></div>
                             </div>
                         </div>
                         <!-- /.box-body -->
