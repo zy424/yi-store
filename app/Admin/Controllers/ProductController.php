@@ -73,12 +73,18 @@ class ProductController extends Controller {
 
     }
 
-    public function destroy(\App\Product $product)
+    public function destroy(Product $product)
     {
         $product->update([
             'status_id' => Product::STATUS_INACTIVE
         ]);
         return redirect('/admin/products');
+    }
+
+
+    public function images(Product $product) {
+        $images = ProductImage::orderBy("created_at", 'desc')->paginate(10);
+        return view('admin.product.images', compact(['images','product']));
     }
 
 }
