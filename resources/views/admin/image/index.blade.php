@@ -7,7 +7,7 @@
             <div class="col-lg-10 col-xs-6">
                 <div class="box box-primary">
                     <div class="box-header with-border ">
-                        <h3 class="box-title">Products List</h3>
+                        <h3 class="box-title">Images Gallery</h3>
                         <div class="box-tools pull-right">
                             <a href="/admin/products/create" class="btn btn-primary btn-sm"  role="button"><i class="fa fa-plus"></i> New Product</a>
                         </div>
@@ -15,8 +15,8 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
-                            <tbody>
-                            <tr>
+                            <tbody><tr>
+                                <th style="width: 10px">ID</th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Status_id</th>
@@ -28,7 +28,8 @@
                             </tr>
                             @foreach($products as $product)
                                 <tr>
-                                    <td><a href="/admin/products/{{$product->id}}/edit">{{$product->name}}</a></td>
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->name}}</td>
                                     <td>{{$product->description}}</td>
                                     <td>{{$product->status_id}}</td>
                                     <td>{{$product->price}}</td>

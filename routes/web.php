@@ -86,6 +86,15 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
+//Images management
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('/admin/images','\App\Admin\Controllers\ProductImageController',['only'=>['index','create', 'store']]);
+//    Route::get('/admin/products/{product}/destroy','\App\Admin\Controllers\ProductController@destroy');
+//    Route::get('/admin/products/{product}/edit', '\App\Admin\Controllers\ProductController@edit');
+//    Route::post('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
+
+});
+
 
 
 
