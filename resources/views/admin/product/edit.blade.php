@@ -9,7 +9,7 @@
 
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="/admin/products/{{$product->id}}" >Summary</a></li>
+                        <li class="active"><a href="/admin/products/{{$product->id}}/edit" >Summary</a></li>
                         <li ><a href="/admin/products/{{$product->id}}/image">Images</a></li>
                     </ul>
                     <div class="box box-default">

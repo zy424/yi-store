@@ -1,7 +1,7 @@
 <?php
 namespace  App\Admin\Controllers;
 
-use App\ProductImage;
+use \App\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \App\Product;
@@ -62,11 +62,6 @@ class ProductController extends Controller {
         $product->discount = request('discount');
         $product->save();
 
-        //upload image
-        $path = $request->file('product_image')->storePublicly(md5(time()));
-
-        ProductImage::create(['product_id'=>$product->id, 'image_path'=>$path]);
-
 
         //render
         return redirect("admin/products/{$product->id}/edit");
@@ -83,8 +78,23 @@ class ProductController extends Controller {
 
 
     public function images(Product $product) {
-        $images = ProductImage::orderBy("created_at", 'desc')->paginate(10);
+        $images = ProductImage::where('product_id', $product->id)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.product.images', compact(['images','product']));
+    }
+
+
+    /**
+     * @param Request $request
+     * @param Product $product
+     * @return array
+     */
+    public function imagesStore(Request $request, Product $product) {
+        $path = $request->file('product_image')->storePublicly(md5(time()));
+        ProductImage::create(['product_id'=>$product->id, 'image_path'=>$path]);
+        return [
+            'error'=> '0',
+            'message'=> ''
+        ];
     }
 
 }

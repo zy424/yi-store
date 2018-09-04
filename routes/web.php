@@ -84,6 +84,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/products/{product}/edit', '\App\Admin\Controllers\ProductController@edit');
     Route::post('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
     Route::get('/admin/products/{product}/image', '\App\Admin\Controllers\ProductController@images');
+    Route::post('/admin/products/{product}/image-store', '\App\Admin\Controllers\ProductController@imagesStore');
 
 });
 

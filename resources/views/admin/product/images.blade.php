@@ -4,17 +4,44 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-12 col-xs-6">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li><a href="/admin/products/{{$product->id}}" >Summary</a></li>
+                        <li><a href="/admin/products/{{$product->id}}/edit" >Summary</a></li>
                         <li class="active"><a href="/admin/products/{{$product->id}}/image">Images</a></li>
                     </ul>
                     <div class="box box-default">
                     <div class="box-header with-border ">
-                        <h3 class="box-title">Product Images</h3>
+                        <h4 class="box-title">Product Images</h4>
                         <div class="box-tools pull-right">
-                            <a href="/admin/images/create" class="btn btn-primary btn-sm"  role="button"><i class="fa fa-plus"></i> New Image</a>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> New Image</button>
+
+                            <!-- Modal -->
+
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Upload image</h4>
+                                        </div>
+
+                                        <form enctype="multipart/form-data" id="modal_form_id"  method="POST">
+                                            {{ csrf_field() }}
+                                            <div class="modal-body">
+                                                <input type="file" name="product_image" id="product_image">
+                                                <input type="hidden" id="product_id" value="{{$product->id}}">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-default add-image-button">Add Image</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -31,10 +58,7 @@
                                 <tr>
                                     <td>{{$image->id}}</td>
                                     <td>
-
-                                        <input type="file" name="product_image" id="product_image">
-
-                                        <img src="{{asset('/storage/'.$image->image_path)}}">
+                                        <img height="200" src="{{asset('/storage/'.$image->image_path)}}">
                                     </td>
 
                                     <td>{{$image->created_at}}</td>
