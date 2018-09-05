@@ -64,8 +64,8 @@
                                     <td>{{$image->created_at}}</td>
                                     <td>{{$image->updated_at}}</td>
                                     <td>
-                                        <a type="button" href="/admin/images" class="btn btn-sm btn-default "  ><i class="fa fa-pencil"></i></a>
-                                        <a type="button"  href="/admin/images" class="btn btn-sm btn-default"  ><i class="fa fa-trash"></i></a>
+                                        {{--<a type="button"  delete-url="/admin/products/{{$product->id}}/{{$image->id}}/image-delete" class="btn btn-default resource-delete"  href="#" ><i class="fa fa-trash"></i></a>--}}
+                                        <a type="button"  href="/admin/products/{{$product->id}}/{{$image->id}}/image-delete" class="btn btn-default"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

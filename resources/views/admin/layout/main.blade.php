@@ -91,7 +91,6 @@
 <script src="/adminlte/dist/js/app.min.js"></script>
 <script src="/adminlte/plugins/fastclick/fastclick.js"></script>
 <script src="/adminlte/dist/js/demo.js"></script>
-<script src="/js/admin.js"></script>
 
 <!-- Yi-store -->
 <script src="/js/yi-store.js"></script>

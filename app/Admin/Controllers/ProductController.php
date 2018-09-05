@@ -5,6 +5,7 @@ use \App\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \App\Product;
+use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller {
@@ -21,8 +22,7 @@ class ProductController extends Controller {
 
     public function store(Request $request)
     {
-        var_dump($request->file('product_image'));
-        exit;
+
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -77,6 +77,7 @@ class ProductController extends Controller {
     }
 
 
+    //product images list
     public function images(Product $product) {
         $images = ProductImage::where('product_id', $product->id)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.product.images', compact(['images','product']));
@@ -88,6 +89,7 @@ class ProductController extends Controller {
      * @param Product $product
      * @return array
      */
+    //product images store(through modal)
     public function imagesStore(Request $request, Product $product) {
         $path = $request->file('product_image')->storePublicly(md5(time()));
         ProductImage::create(['product_id'=>$product->id, 'image_path'=>$path]);
@@ -95,6 +97,15 @@ class ProductController extends Controller {
             'error'=> '0',
             'message'=> ''
         ];
+    }
+
+    public function imageDelete(Product $product, ProductImage $image)
+    {
+        Storage::deleteDirectory(explode('/', $image->image_path)[0]);
+        $image->delete();
+
+        return redirect("/admin/products/" . $product->id . "/image");
+
     }
 
 }

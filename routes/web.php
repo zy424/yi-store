@@ -77,14 +77,19 @@ Route::get('/admin/logout','\App\Admin\Controllers\LoginController@logout');
 //home page
 Route::get('/admin/home','\App\Admin\Controllers\HomeController@index');
 
+
 //products management
 Route::group(['middleware' => 'auth'], function(){
+
+    Route::model('productImage', App\ProductImage::class);
+
     Route::resource('/admin/products','\App\Admin\Controllers\ProductController',['only'=>['index','create', 'store']]);
     Route::get('/admin/products/{product}/destroy','\App\Admin\Controllers\ProductController@destroy');
     Route::get('/admin/products/{product}/edit', '\App\Admin\Controllers\ProductController@edit');
     Route::post('/admin/products/{product}', '\App\Admin\Controllers\ProductController@update');
     Route::get('/admin/products/{product}/image', '\App\Admin\Controllers\ProductController@images');
     Route::post('/admin/products/{product}/image-store', '\App\Admin\Controllers\ProductController@imagesStore');
+    Route::get('/admin/products/{product}/{productImage}/image-delete', '\App\Admin\Controllers\ProductController@imageDelete');
 
 });
 
