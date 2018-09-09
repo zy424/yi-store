@@ -25,9 +25,7 @@ Route::get('/products', 'ProductController@index');
 
 
 //products-detail page
-Route::get('/products/detail', function () {
-    return view('products.show');
-});
+Route::get('/products/{product}/detail','ProductController@show' );
 
 //shipping cart
 Route::get('/cart', function () {

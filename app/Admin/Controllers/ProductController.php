@@ -28,7 +28,7 @@ class ProductController extends Controller {
             'description' => 'required|string',
             'status_id'  =>'required|integer',
             'price' =>'required|numeric',
-            'discount'=>'required|integer',
+            'discount'=>'integer',
         ]);
 
         Product::create(request(['name', 'description','status_id','price','discount']));
