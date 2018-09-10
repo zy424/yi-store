@@ -24,25 +24,26 @@
     <div class="container">
         <div class="row row-pb-lg">
             <div class="col-md-10 col-md-offset-1">
+                @if(isset($product->images))
                 <div class="product-detail-wrap">
                     <div class="row">
                         <div class="col-md-5">
                             <div class="product-entry">
-                                <div class="product-img" style="background-image: url(/images/item-7.jpg);">
+                                <div class="product-img" style="background-image: url({{asset('/storage/'.$product->images[0]->image_path)}})">
                                     <p class="tag"><span class="sale">Sale</span></p>
                                 </div>
                                 <div class="thumb-nail">
-                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-11.jpg);"></a>
-                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-12.jpg);"></a>
-                                    <a href="#" class="thumb-img" style="background-image: url(/images/item-16.jpg);"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url({{asset('/storage/'.$product->images[1]->image_path)}})"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url({{asset('/storage/'.$product->images[2]->image_path)}})"></a>
+                                    <a href="#" class="thumb-img" style="background-image: url({{asset('/storage/'.$product->images[3]->image_path)}})"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7">
                             <div class="desc">
-                                <h3>Dummy Product Name</h3>
+                                <h3>{{$product->name}}</h3>
                                 <p class="price">
-                                    <span>$68.00</span>
+                                    <span>{{$product->price}}</span>
                                     <span class="rate text-right">
 												<i class="icon-star-full"></i>
 												<i class="icon-star-full"></i>
@@ -52,7 +53,7 @@
 												(74 Rating)
 											</span>
                                 </p>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                                <p>{{$product->description}}</p>
                                 <div class="color-wrap">
                                     <p class="color-desc">
                                         Color:
@@ -96,6 +97,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="row">

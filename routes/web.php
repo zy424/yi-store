@@ -13,12 +13,8 @@
 
 
 //homepage
-Route::get('/', function () {
-    return view('home.index');
-});
-Route::get('/home', function () {
-    return view('home.index');
-});
+Route::get('/','HomeController@index' );
+Route::get('/home', 'HomeController@index');
 
 //products page
 Route::get('/products', 'ProductController@index');

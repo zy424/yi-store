@@ -9,7 +9,7 @@
                     <ul>
                         <li class="active"><a href="/home">Home</a></li>
                         <li class="has-dropdown">
-                            <a href="products">Shop</a>
+                            <a href="/products">Shop</a>
                             <ul class="dropdown">
                                 <li><a href="/products/detail">Product Detail</a></li>
                                 <li><a href="/cart">Shipping Cart</a></li>

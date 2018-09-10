@@ -12,13 +12,15 @@ class ProductController extends Controller
     // products list
     public function index() {
         $products = Product::where('status_id', Product::STATUS_ACTIVE)->orderBy("created_at", 'desc')->paginate(9);
-        return view("products/index", compact(['products']));
+        return view("products/index", compact('products'));
     }
+
 
     //product detail
     public function show(Product $product, ProductImage $image)
     {
-        return view("products/show", compact('product'));
+        $images = ProductImage::where('product_id', $product->id)->orderBy('created_at', 'desc')->get();
+        return view("products/show", compact(['images','product']));
     }
 
 
