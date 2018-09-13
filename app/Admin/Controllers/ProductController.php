@@ -1,6 +1,7 @@
 <?php
 namespace  App\Admin\Controllers;
 
+use \App\ProductSize;
 use \App\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -40,7 +41,6 @@ class ProductController extends Controller {
     // edit page
     public function edit(Product $product) {
         return view("admin/product/edit", compact('product'));
-
     }
 
     // edit logic
@@ -107,5 +107,57 @@ class ProductController extends Controller {
         return redirect("/admin/products/" . $product->id . "/image");
 
     }
+
+    //product sizes list
+    public function sizes(Product $product) {
+        $sizes = ProductSize::where('product_id', $product->id)->orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.product.sizes', compact(['sizes','product']));
+    }
+
+    //add size
+    public function sizeCreate(Product $product)
+    {
+        return view('admin/product/size-create', ['product'=>$product]);
+    }
+
+    //store size
+    public function sizeStore(Request $request,Product $product)
+    {
+
+        $request->validate([
+            'size' => 'required|string',
+            'amount'  =>'required|integer',
+        ]);
+
+        ProductSize::create(array_merge(request(['size', 'amount']), ['product_id' => $product->id]));
+
+
+        return redirect('/admin/products/'.$product->id.'/size');
+    }
+
+    //change size
+    public function sizeEdit(ProductSize $productSize) {
+        return view("admin/product/sizes-edit", compact('productSize'));
+    }
+
+    public function sizeUpdate(Request $request, ProductSize $size) {
+        //validate
+        $this->validate(request(),[
+            'size' => 'required|string',
+            'amount'  =>'required|integer',
+        ]);
+
+        //logic
+        $size->size = request('size');
+        $size->amount = request('amount');
+        $size->save();
+
+
+        //render
+        return redirect("admin/products/{$size->id}/size-edit");
+
+    }
+
+
 
 }

@@ -11,6 +11,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="/admin/products/{{$product->id}}/edit" >Summary</a></li>
                         <li ><a href="/admin/products/{{$product->id}}/image">Images</a></li>
+                        <li ><a href="/admin/products/{{$product->id}}/size">Sizes</a></li>
                     </ul>
                     <div class="box box-default">
                         <!-- /.box-header -->

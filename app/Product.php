@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Model;
 
 class Product extends Model
 {
@@ -24,5 +23,10 @@ class Product extends Model
     public function images()
     {
         return $this->hasMany(\App\ProductImage::class, 'product_id', 'id');
+    }
+
+    public function sizes()
+    {
+        return $this->hasMany(\App\ProductSize::class, 'product_id', 'id');
     }
 }
