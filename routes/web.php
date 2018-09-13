@@ -90,7 +90,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/admin/products/{product}/size-store', '\App\Admin\Controllers\ProductController@sizeStore');
     Route::get('/admin/products/{productSize}/size-edit', '\App\Admin\Controllers\ProductController@sizeEdit');
     Route::post('/admin/products/{productSize}/size-update', '\App\Admin\Controllers\ProductController@sizeUpdate');
-    Route::get('/admin/products/{product}/{productSize}/size-delete', '\App\Admin\Controllers\ProductController@sizeDelete');
+    Route::get('/admin/products/{productSize}/size-delete', '\App\Admin\Controllers\ProductController@sizeDelete');
 });
 
 

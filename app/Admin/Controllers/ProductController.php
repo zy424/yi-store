@@ -154,10 +154,17 @@ class ProductController extends Controller {
 
 
         //render
-        return redirect("admin/products/{$size->id}/size-edit");
+        return redirect('/admin/products/'.$size->product->id.'/size');
 
     }
 
+    public function sizeDelete(ProductSize $productSize)
+    {
 
+        $productSize->delete();
+
+        return redirect('/admin/products/'.$productSize->product->id.'/size');
+
+    }
 
 }

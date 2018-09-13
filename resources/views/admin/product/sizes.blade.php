@@ -36,7 +36,7 @@
                                     <td>{{$size->updated_at}}</td>
                                     <td>
                                         <a type="button"  href="/admin/products/{{$size->id}}/size-edit" class="btn btn-sm btn-default"  ><i class="fa fa-pencil"></i></a>
-                                        <a type="button"  href="/admin/products/{{$product->id}}/{{$size->id}}/size-delete" class="btn btn-sm btn-default"><i class="fa fa-trash"></i></a>
+                                        <a type="button"  href="/admin/products/{{$size->id}}/size-delete" class="btn btn-sm btn-default"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

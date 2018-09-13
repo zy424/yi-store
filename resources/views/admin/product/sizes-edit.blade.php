@@ -12,7 +12,7 @@
                     <div class="box box-default">
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="/admin/products/{{$productSize->product->id}}/size-update" enctype="multipart/form-data">
+                        <form role="form" method="POST" action="/admin/products/{{$productSize->id}}/size-update" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="box-body">
 
