@@ -93,6 +93,6 @@
 <script src="/adminlte/dist/js/demo.js"></script>
 
 <!-- Yi-store -->
-<script src="/js/yi-store.js"></script>
+<script src="/js/yi-store-admin.js"></script>
 </body>
 </html>

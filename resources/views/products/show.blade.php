@@ -67,12 +67,9 @@
                                 <div class="size-wrap">
                                     <p class="size-desc">
                                         Size:
-                                        <a href="#" class="size size-1">xs</a>
-                                        <a href="#" class="size size-2">s</a>
-                                        <a href="#" class="size size-3">m</a>
-                                        <a href="#" class="size size-4">l</a>
-                                        <a href="#" class="size size-5">xl</a>
-                                        <a href="#" class="size size-5">xxl</a>
+                                        @foreach($sizes as $size)
+                                        <button class="size" @if ($size->amount == 0) disabled @endif data-amount="{{$size->amount}}">{{$size->size}}</button>
+                                        @endforeach
                                     </p>
                                 </div>
                                 <div class="row row-pb-sm">

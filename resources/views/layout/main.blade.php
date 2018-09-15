@@ -47,12 +47,14 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/store.css">
 
     <!-- Modernizr JS -->
     <script src="/js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="/js/respond.min.js"></script>
+
     <![endif]-->
 
 </head>
@@ -92,6 +94,8 @@
 <script src="/js/jquery.stellar.min.js"></script>
 <!-- Main -->
 <script src="/js/main.js"></script>
+<!-- Yi-store -->
+<script src="/js/yi-store.js"></script>
 
 </body>
 </html>

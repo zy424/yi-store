@@ -1,53 +1,38 @@
 
 
-
-$($.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    })
-);
-
-$('#modal_form_id').submit(function(event){
-    event.preventDefault();
-    var formData = new FormData($(this)[0]);
-
-    $.ajax({
-        url: '/admin/products/' + $('#product_id').val() + '/image-store',
-        data: formData,
-        type: 'post',
-        async: false,
-        processData: false,
-        contentType: false,
-        success: function(response){
-            $('#myModal').modal('toggle');
-            location.reload();
-        }
-    })
+//Product size and amount control
+$(".size").click(function (event){
+    $('.size').removeClass('active');
+    $(this).addClass('active');
+    $('#quantity').val(1);
 });
 
-
-$(".resource-delete").click(function (event) {
-    if (confirm("Are you sure to delete it?") == false) {
-        return;
+$('.quantity-right-plus').click(function(event){
+    var quantityObj = $('#quantity');
+    var quantity = parseInt(quantityObj.val());
+    var maxAmount = $(".size.active").data("amount");
+    if(quantity<maxAmount) {
+        quantityObj.val(parseInt(quantityObj.val())+1);
+        $('.quantity-left-minus').removeAttr("disabled", "disabled");
+    } else  {
+        alert('Sorry, We do not have more!')
     }
 
-    var target = $(event.target);
-    event.preventDefault();
-    var url = $(target).attr("delete-url");
-    $.ajax({
-        url: url,
-        method: "POST",
-        data: { "_method": 'GET' },
-        dataType: "json",
-        success: function success(data) {
-            if (data.error != 0) {
-                alert(data.msg);
-                return;
-            }
 
-            window.location.reload();
-        }
-    });
+
 });
+
+$('.quantity-left-minus').click(function(event){
+    var quantityObj = $('#quantity');
+    var quantity = parseInt(quantityObj.val());
+    if(quantity > 1){
+        quantityObj.val(parseInt(quantityObj.val())-1);
+    }
+    if(quantity == 1) {
+        $(this).attr('disabled','disabled');
+    }
+
+});
+
+
 
