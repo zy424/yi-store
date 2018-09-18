@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="product-entry">
-                                <div class="product-img" style="background-image: url({{asset('/storage/'.$product->images[0]->image_path)}})">
+                                <div class="product-img" data-url="{{asset('/storage/'.$product->images[0]->image_path)}}" style="background-image: url({{asset('/storage/'.$product->images[0]->image_path)}})">
                                     <p class="tag"><span class="sale">Sale</span></p>
                                 </div>
                                 <div class="thumb-nail">
@@ -41,9 +41,9 @@
                         </div>
                         <div class="col-md-7">
                             <div class="desc">
-                                <h3>{{$product->name}}</h3>
+                                <h3 id="product-name" data-id="{{$product->id}}">{{$product->name}}</h3>
                                 <p class="price">
-                                    <span>{{$product->price}}</span>
+                                    <span id="product-price">{{$product->price}}</span>
                                     <span class="rate text-right">
 												<i class="icon-star-full"></i>
 												<i class="icon-star-full"></i>
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p><a href="cart.html" class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+                                <p><a class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
                             </div>
                         </div>
                     </div>
