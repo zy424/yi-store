@@ -25,7 +25,7 @@ $('.btn-addtocart').click(function(event){
         let isExist = false;
         let len = jsonObj.products.length;
         for (let i = 0; i < len; i++) {
-            if(jsonObj.products[i]. productID == product. productID && jsonObj.products[i]. productSize == product. productSize) {
+            if(jsonObj.products[i]== product.productID && jsonObj.products[i]. productSize == product. productSize) {
                 jsonObj.products[i].productQuantity = parseInt(jsonObj.products[i].productQuantity) + parseInt(product.productQuantity);
                 isExist = true;
             }
@@ -82,8 +82,9 @@ $(function(){
         let jsonObj = JSON.parse(cart);
         let len = jsonObj.products.length;
         for (let i = 0; i < len; i++) {
-            if(jsonObj.products[i]. productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
+            if(jsonObj.products[i].productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
                 jsonObj.products.splice(i, 1);
+                break;
             }
         }
         localStorage.setItem('cart', JSON.stringify(jsonObj));
