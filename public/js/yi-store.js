@@ -37,10 +37,11 @@ $('.quantity-left-minus').click(function(event){
 $(".btn-addtocart").click(function(event){
     var product = {
         productID: $("#product-name").data('id'),
-        imageUrl: $(".product-img").data('url'),
         productName: $("#product-name").text(),
+        imageUrl: $(".product-img").data('url'),
         productPrice:$("#product-price").text(),
-        productQuantity:$("#quantity").val()
+        productQuantity:$("#quantity").val(),
+
     };
     var cart = localStorage.getItem("cart");
     if(cart == null) {

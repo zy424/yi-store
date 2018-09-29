@@ -25,6 +25,8 @@
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="/css/animate.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="/css/icomoon.css">
     <!-- Bootstrap  -->
@@ -95,7 +97,8 @@
 <!-- Main -->
 <script src="/js/main.js"></script>
 <!-- Yi-store -->
-<script src="/js/yi-store.js"></script>
+<script src="/js/yi-store-size.js"></script>
+<script src="/js/yi-store-cart.js"></script>
 
 </body>
 </html>

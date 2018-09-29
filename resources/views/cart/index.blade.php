@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="row row-pb-md">
-                <div class="cart-list col-md-10 col-md-offset-1">
+                <div class="cart-list col-md-11 col-md-offset-1">
                     <div class="product-name">
                         <div class="one-forth text-center">
                             <span>Product Details</span>

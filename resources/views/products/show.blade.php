@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p><a class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+                                <p><a class="btn btn-primary btn-addtocart" href="/cart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
                             </div>
                         </div>
                     </div>

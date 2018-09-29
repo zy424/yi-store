@@ -19,6 +19,6 @@ services:
       MYSQL_DATABASE: app
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
-      - '3306:3306'
+      - '33061:3306'
 volumes:
     db-data:
