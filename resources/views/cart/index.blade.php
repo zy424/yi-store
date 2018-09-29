@@ -80,13 +80,14 @@
                             </div>
                             <div class="col-md-3 col-md-push-1 text-center">
                                 <div class="total">
-                                    <div class="sub">
-                                        <p><span>Subtotal:</span> <span>$200.00</span></p>
-                                        <p><span>Delivery:</span> <span>$0.00</span></p>
-                                        <p><span>Discount:</span> <span>$45.00</span></p>
-                                    </div>
+                                  {{--<div class="sub">--}}
+                                        {{--<p><span>Subtotal($):</span> <span class="subtotal"></span></p>--}}
+                                        {{--<p><span>Delivery($):</span> <span class="delivery">0.00</span></p>--}}
+                                        {{--<p><span>Discount($):</span> <span class="discount">0.00</span></p>--}}
+
+                                   {{--</div>--}}
                                     <div class="grand-total">
-                                        <p><span><strong>Total:</strong></span> <span>$450.00</span></p>
+                                        <p><span><strong>Total($):</strong></span> <span class="total-price"></span></p>
                                     </div>
                                 </div>
                             </div>

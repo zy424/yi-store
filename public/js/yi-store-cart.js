@@ -76,19 +76,41 @@ $(function(){
             $('.cart-list').append(template);
       })
     }
-    //Remove a product from cart
-    $(".product-delete").click(function(event){
-        let cart = localStorage.getItem('cart');
-        let jsonObj = JSON.parse(cart);
-        let len = jsonObj.products.length;
-        for (let i = 0; i < len; i++) {
-            if(jsonObj.products[i].productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
-                jsonObj.products.splice(i, 1);
-                break;
+});
+
+//3.Remove a product from cart
+$(function(){$(".product-delete").click(function(event){
+    let cart = localStorage.getItem('cart');
+    let jsonObj = JSON.parse(cart);
+    let len = jsonObj.products.length;
+    for (let i = 0; i < len; i++) {
+        if(jsonObj.products[i].productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
+            if (confirm("Are you sure to delete it?") == false) {
+                return;
             }
+            jsonObj.products.splice(i, 1);
+            break;
         }
-        localStorage.setItem('cart', JSON.stringify(jsonObj));
-        location.reload();
+    }
+    localStorage.setItem('cart', JSON.stringify(jsonObj));
+    location.reload();
     });
+});
+
+//4.Calculate the total price of the shopping cart
+$(function(){
+    let cart = localStorage.getItem('cart');
+    let jsonObj = JSON.parse(cart);
+    let len = jsonObj.products.length;
+    let price = 0.00;
+    for (let i = 0; i < len; i++) {
+       price += (parseInt(jsonObj.products[i].productQuantity)) * (parseFloat(jsonObj.products[i].productPrice));
+
+    }
+    $('.total-price').text(price);
+
+
+
+
 });
 
