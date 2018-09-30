@@ -109,8 +109,18 @@ $(function(){
     }
     $('.total-price').text(price);
 
+});
 
-
-
+//5. create a form to submit shopping cart data to the backend
+$(function(){
+    let cart = localStorage.getItem('cart');
+    let jsonObj = JSON.parse(cart);
+    let len = jsonObj.products.length;
+    for (let i = 0; i < len; i++){
+        let template = `<input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productID}">
+                        <input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productSize}">
+                        <input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productQuantity}">`
+        $('#order-form').append(template);
+    }
 });
 

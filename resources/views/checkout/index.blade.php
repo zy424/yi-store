@@ -126,6 +126,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="cart-detail">
+
                         <h2>Cart Total</h2>
                         <ul>
                             <li>
@@ -139,42 +140,47 @@
                             <li><span>Order Total</span> <span>$180.00</span></li>
                         </ul>
                     </div>
-                    <div class="cart-detail">
-                        <h2>Payment Method</h2>
-                        <div class="form-group">
+                    {{--<div class="cart-detail">--}}
+                        {{--<h2>Payment Method</h2>--}}
+                        {{--<div class="form-group">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="radio">--}}
+                                    {{--<label><input type="radio" name="optradio">Direct Bank Tranfer</label>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="radio">--}}
+                                    {{--<label><input type="radio" name="optradio">Check Payment</label>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="radio">--}}
+                                    {{--<label><input type="radio" name="optradio">Paypal</label>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="checkbox">--}}
+                                    {{--<label><input type="checkbox" value="">I have read and accept the terms and conditions</label>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    <form id="order-form" action="" type="POST">
+
+                        <div class="row">
                             <div class="col-md-12">
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">Direct Bank Tranfer</label>
-                                </div>
+                                <p><button type="submit" class="btn btn-primary">Place an order</button></p>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">Check Payment</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">Paypal</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">I have read and accept the terms and conditions</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><a href="#" class="btn btn-primary">Place an order</a></p>
-                        </div>
-                    </div>
+                    </form>
+
+
                 </div>
             </div>
         </div>
