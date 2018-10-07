@@ -32,11 +32,10 @@ Route::get('/cart', function () {
 Route::get('/checkout', function () {
     return view('checkout.index');
 });
+Route:: post('/cart/checkout','\App\Http\Controllers\OrderController@checkout');
 
 //order-complete
-Route::get('/order-complete', function () {
-    return view('order-complete.index');
-});
+Route::get('/order-complete', '\App\Http\Controllers\OrderController@cartUpdate');
 
 //add-to-wishlist
 Route::get('/wishlist', function () {
@@ -92,6 +91,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/admin/products/{productSize}/size-update', '\App\Admin\Controllers\ProductController@sizeUpdate');
     Route::get('/admin/products/{productSize}/size-delete', '\App\Admin\Controllers\ProductController@sizeDelete');
 });
+
+//
 
 
 

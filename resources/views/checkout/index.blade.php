@@ -171,8 +171,8 @@
                             {{--</div>--}}
                         {{--</div>--}}
                     {{--</div>--}}
-                    <form id="order-form" action="" type="POST">
-
+                    <form id="order-form" action="/cart/checkout" method="POST">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-12">
                                 <p><button type="submit" class="btn btn-primary">Place an order</button></p>

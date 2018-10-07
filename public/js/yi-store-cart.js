@@ -82,18 +82,20 @@ $(function(){
 $(function(){$(".product-delete").click(function(event){
     let cart = localStorage.getItem('cart');
     let jsonObj = JSON.parse(cart);
-    let len = jsonObj.products.length;
-    for (let i = 0; i < len; i++) {
-        if(jsonObj.products[i].productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
-            if (confirm("Are you sure to delete it?") == false) {
-                return;
+    if (cart != null) {
+        let len = jsonObj.products.length;
+        for (let i = 0; i < len; i++) {
+            if(jsonObj.products[i].productID == $(this).data('delete-id') && jsonObj.products[i]. productSize == $(this).data('delete-size')) {
+                if (confirm("Are you sure to delete it?") == false) {
+                    return;
+                }
+                jsonObj.products.splice(i, 1);
+                break;
             }
-            jsonObj.products.splice(i, 1);
-            break;
         }
+        localStorage.setItem('cart', JSON.stringify(jsonObj));
+        location.reload();
     }
-    localStorage.setItem('cart', JSON.stringify(jsonObj));
-    location.reload();
     });
 });
 
@@ -101,26 +103,30 @@ $(function(){$(".product-delete").click(function(event){
 $(function(){
     let cart = localStorage.getItem('cart');
     let jsonObj = JSON.parse(cart);
-    let len = jsonObj.products.length;
-    let price = 0.00;
-    for (let i = 0; i < len; i++) {
-       price += (parseInt(jsonObj.products[i].productQuantity)) * (parseFloat(jsonObj.products[i].productPrice));
+    if (cart != null){
+        let len = jsonObj.products.length;
+        let price = 0.00;
+        for (let i = 0; i < len; i++) {
+            price += (parseInt(jsonObj.products[i].productQuantity)) * (parseFloat(jsonObj.products[i].productPrice));
 
+        }
+        $('.total-price').text(price);
     }
-    $('.total-price').text(price);
-
 });
 
 //5. create a form to submit shopping cart data to the backend
 $(function(){
     let cart = localStorage.getItem('cart');
     let jsonObj = JSON.parse(cart);
-    let len = jsonObj.products.length;
-    for (let i = 0; i < len; i++){
-        let template = `<input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productID}">
-                        <input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productSize}">
-                        <input type="hidden" name="orderProduct[${i}]" value="${jsonObj.products[i].productQuantity}">`
-        $('#order-form').append(template);
+    if (cart != null){
+        let len = jsonObj.products.length;
+        for (let i = 0; i < len; i++){
+            let template = `<input type="hidden" name="orderProduct[${i}][product_id]" value="${jsonObj.products[i].productID}">
+                        <input type="hidden" name="orderProduct[${i}][product_size]" value="${jsonObj.products[i].productSize}">
+                        <input type="hidden" name="orderProduct[${i}][product_quantity]" value="${jsonObj.products[i].productQuantity}">`
+            $('#order-form').append(template);
+        }
     }
+
 });
 
