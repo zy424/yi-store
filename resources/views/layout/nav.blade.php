@@ -21,7 +21,7 @@
                         <li><a href="#">Newsletter</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/cart"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                        <li><a href="/cart"><i class="icon-shopping-cart"></i> <span class="cart-products-number">Cart []</span></a></li>
                     </ul>
                 </div>
             </div>

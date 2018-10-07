@@ -87,7 +87,7 @@
 
                                    {{--</div>--}}
                                     <div class="grand-total">
-                                        <p><span><strong>Total($):</strong></span> <span class="total-price"></span></p>
+                                        <p><span><strong>Total:</strong></span> <span class="total-price"></span></p>
                                     </div>
                                 </div>
                                 <div class="row" style = "margin-top: 20px">

@@ -130,14 +130,13 @@
                         <h2>Cart Total</h2>
                         <ul>
                             <li>
-                                <span>Subtotal</span> <span>$100.00</span>
-                                <ul>
-                                    <li><span>1 x Product Name</span> <span>$99.00</span></li>
-                                    <li><span>1 x Product Name</span> <span>$78.00</span></li>
+                                <span >Subtotal</span> <span class="cart-subtotal-price"></span>
+                                <ul class="cart-product-name">
+
                                 </ul>
                             </li>
                             <li><span>Shipping</span> <span>$0.00</span></li>
-                            <li><span>Order Total</span> <span>$180.00</span></li>
+                            <li><span>Order Total</span> <span class="cart-subtotal-price"></span></li>
                         </ul>
                     </div>
                     {{--<div class="cart-detail">--}}

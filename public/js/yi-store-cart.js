@@ -24,12 +24,17 @@ $('.btn-addtocart').click(function(event){
         jsonObj = JSON.parse(cart);
         let isExist = false;
         let len = jsonObj.products.length;
-        for (let i = 0; i < len; i++) {
-            if(jsonObj.products[i]== product.productID && jsonObj.products[i]. productSize == product. productSize) {
-                jsonObj.products[i].productQuantity = parseInt(jsonObj.products[i].productQuantity) + parseInt(product.productQuantity);
-                isExist = true;
+        if(product. productSize) {
+            for (let i = 0; i < len; i++) {
+                if(jsonObj.products[i]== product.productID && jsonObj.products[i]. productSize == product. productSize) {
+                    jsonObj.products[i].productQuantity = parseInt(jsonObj.products[i].productQuantity) + parseInt(product.productQuantity);
+                    isExist = true;
+                }
             }
+        } else {
+            alert('Please select a size');
         }
+
 
         if(!isExist) {
             jsonObj.products.push(product);
@@ -108,9 +113,14 @@ $(function(){
         let price = 0.00;
         for (let i = 0; i < len; i++) {
             price += (parseInt(jsonObj.products[i].productQuantity)) * (parseFloat(jsonObj.products[i].productPrice));
-
+            let template = `<li><span>${parseInt(jsonObj.products[i].productQuantity)} x ${jsonObj.products[i].productName}</span> 
+                            <span>$${jsonObj.products[i].productPrice}</span></li>`;
+            $('ul.cart-product-name').append(template);
         }
-        $('.total-price').text(price);
+        $('.total-price').text('$' + price);
+        $('span.cart-subtotal-price').text('$' + price);
+        $('span.cart-total-price').text('$' + price);
+
     }
 });
 
@@ -120,6 +130,7 @@ $(function(){
     let jsonObj = JSON.parse(cart);
     if (cart != null){
         let len = jsonObj.products.length;
+        $('span.cart-products-number').text('Cart ['+len+']');
         for (let i = 0; i < len; i++){
             let template = `<input type="hidden" name="orderProduct[${i}][product_id]" value="${jsonObj.products[i].productID}">
                         <input type="hidden" name="orderProduct[${i}][product_size]" value="${jsonObj.products[i].productSize}">
