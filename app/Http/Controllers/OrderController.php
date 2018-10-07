@@ -45,6 +45,13 @@ class OrderController extends Controller
           $order->price = round($totalPrice);
           $order->save();
       }
-      return view('order-complete.index');
+      return [
+          'success' => true
+      ];
+   }
+
+   public function complete()
+   {
+       return view('order-complete.index');
    }
 }

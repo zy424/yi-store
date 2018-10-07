@@ -35,7 +35,7 @@ Route::get('/checkout', function () {
 Route:: post('/cart/checkout','\App\Http\Controllers\OrderController@checkout');
 
 //order-complete
-Route::get('/order-complete', '\App\Http\Controllers\OrderController@cartUpdate');
+Route::get('/order-complete', '\App\Http\Controllers\OrderController@complete');
 
 //add-to-wishlist
 Route::get('/wishlist', function () {

@@ -137,7 +137,35 @@ $(function(){
                         <input type="hidden" name="orderProduct[${i}][product_quantity]" value="${jsonObj.products[i].productQuantity}">`
             $('#order-form').append(template);
         }
+    } else {
+        $('span.cart-products-number').text('Cart [0]');
     }
 
+});
+
+$(function(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // this is the id of the form
+    $("#order-form").submit(function(e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        let form = $(this);
+        let url = form.attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+                localStorage.removeItem('cart');
+                window.location.href = '/order-complete'; // show response from the php script.
+            }
+        });
+    });
 });
 
