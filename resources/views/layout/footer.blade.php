@@ -52,10 +52,10 @@
             <div class="col-md-3">
                 <h4>Contact Information</h4>
                 <ul class="colorlib-footer-links">
-                    <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
-                    <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                    <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                    <li><a href="#">yoursite.com</a></li>
+                    <li>15 Riccarton Road, <br> Christchurch, NZ, 8053</li>
+                    <li><a href="tel://1234567920">+ 64 0210123456</a></li>
+                    <li><a href="mailto:zhouyi@yistore.com">info@yistore.com</a></li>
+                    <li><a href="#">yistore.com</a></li>
                 </ul>
             </div>
         </div>
