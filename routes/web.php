@@ -92,7 +92,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/products/{productSize}/size-delete', '\App\Admin\Controllers\ProductController@sizeDelete');
 });
 
-//
+//orders management
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/admin/orders','\App\Admin\Controllers\OrderController@index');
+    Route::get('/admin/orders/{order}/order-product','\App\Admin\Controllers\OrderController@orderProduct');
+});
 
 
 

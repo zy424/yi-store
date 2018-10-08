@@ -12,7 +12,13 @@
             <li class="treeview">
                 <a href="/admin/products">
                     <i class="fa fa-dashboard"></i> <span>Products Management</span>
-                    <span class="pull-right-container"></span></a>
+                    <span class="pull-right-container"></span>
+                </a>
+
+                <a href="/admin/orders">
+                    <i class="fa fa-dashboard"></i> <span>Orders Management</span>
+                    <span class="pull-right-container"></span>
+                </a>
             </li>
 
         </ul>

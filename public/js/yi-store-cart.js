@@ -143,6 +143,7 @@ $(function(){
 
 });
 
+//6. clear the localStorage after submit
 $(function(){
     $.ajaxSetup({
         headers: {
